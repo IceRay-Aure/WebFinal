@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saveurs en Fête – Espace Organisateur</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.orga-schedule-table { width: 100%; border-collapse: collapse; border: 1px solid var(--c-border); margin-bottom: 48px; }
+.orga-schedule-table th {
+  background: var(--c-charcoal);
+  padding: 14px 16px;
+  font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--c-gold); border: 1px solid var(--c-border); text-align: center;
+}
+.orga-schedule-table th:first-child { text-align: left; width: 80px; }
+.orga-schedule-table td { border: 1px solid rgba(201,168,76,0.1); height: 100px; vertical-align: top; padding: 0; }
+.orga-schedule-table td.time-cell { width: 80px; vertical-align: middle; text-align: center; background: rgba(201,168,76,0.03); }
+.orga-cell-filled {
+  height: 100%; padding: 12px 14px;
+  background: rgba(201,168,76,0.05); border-left: 2px solid var(--c-gold);
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.orga-cell-empty { height: 100%; background: rgba(0,0,0,0.1); }
+.orga-cell-title { font-family: var(--f-display); font-size: 14px; font-weight: 500; color: var(--c-ivory); line-height: 1.2; margin-bottom: 3px; }
+.orga-cell-artist { font-size: 10px; color: var(--c-muted); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-logo" href="#">
+    <div class="site-logo-icon">⚙️</div>
+    <div class="site-logo-text">
+      <span class="site-logo-name">Administration</span>
+      <span class="site-logo-sub">Saveurs en Fête · Organisateur</span>
+    </div>
+  </a>
+  <nav class="site-nav-private">
+    <a href="dashboard-organisateur.html" class="active">Programme</a>
+    <a href="gerer-artistes.html">Gérer les Artistes</a>
+    <a href="editer-profil.html">Mon profil</a>
+    <a href="connexion.html" class="btn-logout">Déconnexion</a>
+  </nav>
+</header>
+
+<div class="private-layout">
+  <!-- SIDEBAR -->
+  <aside class="private-sidebar">
+    <div class="private-sidebar-avatar">⚙️</div>
+    <div class="private-sidebar-name">Organisateur</div>
+    <div class="private-sidebar-role">Administrateur</div>
+    <nav class="private-nav">
+      <a href="dashboard-organisateur.html" class="active">
+        <span>📅</span> Gestion du Programme
+      </a>
+      <a href="gerer-artistes.html">
+        <span>👨‍🍳</span> Gérer les Artistes
+      </a>
+      <div class="private-nav-divider"></div>
+      <a href="editer-profil.html">
+        <span>✏️</span> Mon profil
+      </a>
+      <a href="index.html">
+        <span>🌐</span> Voir le site public
+      </a>
+    </nav>
+  </aside>
+
+  <!-- CONTENU -->
+  <main class="private-content">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:28px; flex-wrap:wrap; gap:12px;">
+      <div>
+        <div class="private-content-title">Programme de la Journée</div>
+        <div class="private-content-sub">Gérez les créneaux et les prestations en temps réel.</div>
+      </div>
+      <a href="planifier.html" class="btn btn-primary">+ Planifier une prestation</a>
+    </div>
+
+    <!-- Messages (décommenter selon contexte) -->
+    <!-- <div class="alert alert-success">✅ La prestation a été ajoutée au programme avec succès.</div> -->
+    <!-- <div class="alert alert-success">✅ La prestation a été retirée du programme avec succès.</div> -->
+    <!-- <div class="alert alert-error">⚠️ Un conflit a été détecté. L'artiste ou la scène n'est plus disponible.</div> -->
+
+    <!-- GRILLE PROGRAMME INTERACTIVE -->
+    <table class="orga-schedule-table">
+      <thead>
+        <tr>
+          <th>Heure</th>
+          <th>🔥 Scène Principale</th>
+          <th>🌿 Atelier Découverte</th>
+          <th>🍷 Espace Dégustation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="time-cell">
+            <div class="schedule-time">10</div>
+            <div class="schedule-time-label">h00</div>
+          </td>
+          <td>
+            <div class="orga-cell-filled">
+              <div>
+                <div class="orga-cell-title">Pain artisanal au levain</div>
+                <div class="orga-cell-artist">Chef Marc Dubois</div>
+              </div>
+              <a href="deprogrammer.php?prog_id=1" class="btn btn-sm btn-danger">🗑 Déprogrammer</a>
+            </div>
+          </td>
+          <td><div class="orga-cell-empty"></div></td>
+          <td>
+            <div class="orga-cell-filled">
+              <div>
+                <div class="orga-cell-title">Accord mets & vins</div>
+                <div class="orga-cell-artist">Claire Vandenberg</div>
+              </div>
+              <a href="deprogrammer.php?prog_id=2" class="btn btn-sm btn-danger">🗑 Déprogrammer</a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="time-cell">
+            <div class="schedule-time">14</div>
+            <div class="schedule-time-label">h00</div>
+          </td>
+          <td><div class="orga-cell-empty"></div></td>
+          <td>
+            <div class="orga-cell-filled">
+              <div>
+                <div class="orga-cell-title">Sushis végétariens</div>
+                <div class="orga-cell-artist">Chef Yuki Tanaka</div>
+              </div>
+              <a href="deprogrammer.php?prog_id=3" class="btn btn-sm btn-danger">🗑 Déprogrammer</a>
+            </div>
+          </td>
+          <td><div class="orga-cell-empty"></div></td>
+        </tr>
+        <tr>
+          <td class="time-cell">
+            <div class="schedule-time">16</div>
+            <div class="schedule-time-label">h00</div>
+          </td>
+          <td>
+            <div class="orga-cell-filled">
+              <div>
+                <div class="orga-cell-title">Grand show pâtisserie</div>
+                <div class="orga-cell-artist">Sophie Marchetti</div>
+              </div>
+              <a href="deprogrammer.php?prog_id=4" class="btn btn-sm btn-danger">🗑 Déprogrammer</a>
+            </div>
+          </td>
+          <td>
+            <div class="orga-cell-filled">
+              <div>
+                <div class="orga-cell-title">Cuisine marocaine</div>
+                <div class="orga-cell-artist">Chef Amina Khoury</div>
+              </div>
+              <a href="deprogrammer.php?prog_id=5" class="btn btn-sm btn-danger">🗑 Déprogrammer</a>
+            </div>
+          </td>
+          <td><div class="orga-cell-empty"></div></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- LISTE DES ARTISTES -->
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+      <span class="section-overline" style="margin-bottom:0;">Gestion des Artistes</span>
+    </div>
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Artiste</th>
+          <th>Spécialité</th>
+          <th>Prestations</th>
+          <th>Statut</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Chef Marc Dubois</td>
+          <td>Boulangerie</td>
+          <td>3</td>
+          <td><span class="badge badge-success">✅ Programmé</span></td>
+          <td>
+            <div class="admin-table-actions">
+              <a href="gerer-artiste.html?id=1" class="btn btn-sm btn-dark">⚙️ Gérer</a>
+              <a href="supprimer-artiste.html?id=1" class="btn btn-sm btn-danger">🗑</a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Chef Yuki Tanaka</td>
+          <td>Cuisine Japonaise</td>
+          <td>2</td>
+          <td><span class="badge badge-success">✅ Programmé</span></td>
+          <td>
+            <div class="admin-table-actions">
+              <a href="gerer-artiste.html?id=2" class="btn btn-sm btn-dark">⚙️ Gérer</a>
+              <a href="supprimer-artiste.html?id=2" class="btn btn-sm btn-danger">🗑</a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Fromagerie Delwiche</td>
+          <td>Artisan Fromager</td>
+          <td>1</td>
+          <td><span class="badge badge-muted">Non programmé</span></td>
+          <td>
+            <div class="admin-table-actions">
+              <a href="gerer-artiste.html?id=5" class="btn btn-sm btn-dark">⚙️ Gérer</a>
+              <a href="supprimer-artiste.html?id=5" class="btn btn-sm btn-danger">🗑</a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</div>
+
+</body>
+</html>

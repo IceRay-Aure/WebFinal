@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saveurs en Fête – Espace Artiste</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-logo" href="index.html">
+    <div class="site-logo-icon">🍴</div>
+    <div class="site-logo-text">
+      <span class="site-logo-name">Saveurs en Fête</span>
+      <span class="site-logo-sub">Espace Artiste</span>
+    </div>
+  </a>
+  <nav class="site-nav-private">
+    <a href="dashboard-artiste.html" class="active">Mon Espace</a>
+    <a href="index.html">Voir le site</a>
+    <a href="connexion.html" class="btn-logout">Se déconnecter</a>
+  </nav>
+</header>
+
+<div class="private-layout">
+  <!-- SIDEBAR -->
+  <aside class="private-sidebar">
+    <div class="private-sidebar-avatar">👨‍🍳</div>
+    <div class="private-sidebar-name">Chef Marc Dubois</div>
+    <div class="private-sidebar-role">Artiste</div>
+    <nav class="private-nav">
+      <a href="dashboard-artiste.html" class="active">
+        <span>🏠</span> Tableau de bord
+      </a>
+      <a href="editer-profil.html">
+        <span>✏️</span> Éditer mon profil
+      </a>
+      <div class="private-nav-divider"></div>
+      <a href="mes-prestations.html">
+        <span>🍽️</span> Mes prestations
+      </a>
+      <a href="ajouter-prestation.html">
+        <span>➕</span> Ajouter une prestation
+      </a>
+    </nav>
+  </aside>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="private-content">
+    <div class="private-content-title">Bonjour, Marc 👋</div>
+    <div class="private-content-sub">Voici un résumé de votre participation à Saveurs en Fête 2026.</div>
+
+    <!-- MESSAGE DE SUCCÈS (exemple) -->
+    <!-- <div class="alert alert-success">✅ Votre profil a été mis à jour avec succès.</div> -->
+
+    <!-- PROGRAMMATION -->
+    <div style="margin-bottom: 40px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <span class="section-overline" style="margin-bottom:0;">Ma Programmation Officielle</span>
+        <span class="badge badge-gold">1 prestation programmée</span>
+      </div>
+
+      <!-- État : programmé -->
+      <div class="planning-item">
+        <div class="planning-time">10<span style="font-size:14px;">h00</span></div>
+        <div class="planning-scene">🔥 Scène Principale</div>
+        <div class="planning-presta">Démonstration pain artisanal au levain</div>
+      </div>
+
+      <!-- État : non programmé (décommenter si besoin) -->
+      <!--
+      <div class="empty-state">
+        <div class="empty-state-icon">📅</div>
+        <div class="empty-state-title">Pas encore programmé</div>
+        <div class="empty-state-text">Vous n'êtes pas encore dans le programme officiel. L'organisateur met le planning à jour régulièrement !</div>
+      </div>
+      -->
+    </div>
+
+    <!-- CATALOGUE -->
+    <div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <span class="section-overline" style="margin-bottom:0;">Mon Catalogue de Prestations</span>
+        <a href="ajouter-prestation.html" class="btn btn-sm btn-primary">+ Ajouter</a>
+      </div>
+
+      <!-- Message de confirmation suppression (décommenter après action) -->
+      <!-- <div class="alert alert-success">✅ La prestation a été supprimée avec succès.</div> -->
+      <!-- Message d'erreur suppression programmée -->
+      <!-- <div class="alert alert-error">⚠️ Impossible de supprimer cette prestation car elle fait partie du programme officiel.</div> -->
+
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Titre</th>
+            <th>Catégorie</th>
+            <th>Statut</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Démonstration pain artisanal au levain</td>
+            <td>Démonstration</td>
+            <td><span class="badge badge-success">✅ Programmé — 10h00</span></td>
+            <td>
+              <div class="admin-table-actions">
+                <a href="modifier-prestation.html" class="btn btn-sm btn-dark">✏️ Modifier</a>
+                <!-- Bouton supprimer désactivé si programmé -->
+                <button class="btn btn-sm btn-danger" disabled style="opacity:0.4; cursor:not-allowed;">🗑</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Atelier viennoiseries maison</td>
+            <td>Atelier participatif</td>
+            <td><span class="badge badge-muted">En attente</span></td>
+            <td>
+              <div class="admin-table-actions">
+                <a href="modifier-prestation.html" class="btn btn-sm btn-dark">✏️ Modifier</a>
+                <a href="supprimer-prestation.html?id=2" class="btn btn-sm btn-danger">🗑 Supprimer</a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Les farines biologiques locales</td>
+            <td>Conférence</td>
+            <td><span class="badge badge-muted">En attente</span></td>
+            <td>
+              <div class="admin-table-actions">
+                <a href="modifier-prestation.html" class="btn btn-sm btn-dark">✏️ Modifier</a>
+                <a href="supprimer-prestation.html?id=3" class="btn btn-sm btn-danger">🗑 Supprimer</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saveurs en Fête 2026 – Prestations</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-logo" href="index.html">
+    <div class="site-logo-icon">🍴</div>
+    <div class="site-logo-text">
+      <span class="site-logo-name">Saveurs en Fête</span>
+      <span class="site-logo-sub">Festival Culinaire · 2026</span>
+    </div>
+  </a>
+  <nav class="site-nav">
+    <a href="index.html">Accueil</a>
+    <a href="artistes.html">Artistes</a>
+    <a href="prestations.html" class="active">Prestations</a>
+    <a href="contact.html">Contact</a>
+    <a href="connexion.html" class="btn-nav-connect">Se connecter</a>
+  </nav>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title-wrap">
+      <span class="section-overline">Catalogue complet</span>
+      <h1 class="section-title">Toutes les <em style="font-style:italic;">Prestations</em></h1>
+      <div class="section-divider"><span class="section-divider-icon">◆</span></div>
+    </div>
+
+    <!-- FILTRES AVANCÉS -->
+    <div class="filter-advanced">
+      <div class="filter-advanced-title">◈ Recherche & Filtres</div>
+      <form method="GET" action="prestations.html">
+        <div class="filter-grid">
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label">Mot-clé</label>
+            <input type="text" name="q" class="form-control" placeholder="Rechercher une prestation...">
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label">Artiste</label>
+            <select name="artiste" class="form-control">
+              <option value="">Tous les artistes</option>
+              <option>Chef Marc Dubois</option>
+              <option>Chef Yuki Tanaka</option>
+              <option>Sophie Marchetti</option>
+              <option>Claire Vandenberg</option>
+              <option>Fromagerie Delwiche</option>
+              <option>Chef Amina Khoury</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label">Catégorie</label>
+            <select name="categorie" class="form-control">
+              <option value="">Toutes catégories</option>
+              <option>Démonstration</option>
+              <option>Atelier participatif</option>
+              <option>Dégustation</option>
+              <option>Show culinaire</option>
+              <option>Conférence</option>
+            </select>
+          </div>
+          <div class="filter-actions" style="align-items:flex-end; padding-bottom:1px;">
+            <button type="submit" class="btn btn-primary btn-sm">Filtrer</button>
+            <a href="prestations.html" class="btn btn-dark btn-sm">Reset</a>
+          </div>
+        </div>
+        <div style="margin-top:14px;">
+          <label class="filter-checkbox">
+            <input type="checkbox" name="programmees">
+            <span class="filter-checkbox-label">Afficher uniquement les prestations programmées</span>
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <!-- GALERIE -->
+    <div class="grid-4">
+      <a class="presta-card" href="prestation-detail.html">
+        <div class="presta-card-img">🥖</div>
+        <div class="presta-card-body">
+          <div class="presta-card-cat">Démonstration</div>
+          <div class="presta-card-title">Pain artisanal au levain</div>
+          <div class="presta-card-artist">Chef Marc Dubois</div>
+          <span class="badge badge-gold">🕙 10h · Scène Principale</span>
+        </div>
+      </a>
+      <a class="presta-card" href="prestation-detail.html">
+        <div class="presta-card-img">🍣</div>
+        <div class="presta-card-body">
+          <div class="presta-card-cat">Atelier participatif</div>
+          <div class="presta-card-title">Sushis végétariens</div>
+          <div class="presta-card-artist">Chef Yuki Tanaka</div>
+          <span class="badge badge-gold">🕑 14h · Atelier Découverte</span>
+        </div>
+      </a>
+      <a class="presta-card" href="prestation-detail.html">
+        <div class="presta-card-img">🍰</div>
+        <div class="presta-card-body">
+          <div class="presta-card-cat">Show culinaire</div>
+          <div class="presta-card-title">Grand show pâtisserie live</div>
+          <div class="presta-card-artist">Sophie Marchetti</div>
+          <span class="badge badge-gold">🕓 16h · Scène Principale</span>
+        </div>
+      </a>
+      <a class="presta-card" href="prestation-detail.html">
+        <div class="presta-card-img">🍷</div>
+        <div class="presta-card-body">
+          <div class="presta-card-cat">Dégustation</div>
+          <div class="presta-card-title">Accord mets & vins de terroir</div>
+          <div class="presta-card-artist">Claire Vandenberg</div>
+          <span class="badge badge-gold">🕙 10h · Espace Dégustation</span>
+        </div>
+      </a>
+      <a class="presta-card" href="prestation-detail.html">
+        <div class="presta-card-img">🧀</div>
+        <div class="presta-card-body">
+          <div class="presta-card-cat">Dégustation</div>
+          <div class="presta-card-title">Plateau fromages AOP belges</div>
+          <div class="presta-card-artist">Fromagerie Delwiche</div>
+          <span class="badge badge-gold">🕑 14h · Espace Dégustation</span>
+        </div>
+      </a>
+      <a class="presta-card" href="prestation-detail.html">
+        <div class="presta-card-img">🫕</div>
+        <div class="presta-card-body">
+          <div class="presta-card-cat">Démonstration</div>
+          <div class="presta-card-title">Cuisine du monde : Maroc</div>
+          <div class="presta-card-artist">Chef Amina Khoury</div>
+          <span class="badge badge-gold">🕓 16h · Atelier Découverte</span>
+        </div>
+      </a>
+      <a class="presta-card" href="prestation-detail.html">
+        <div class="presta-card-img">🥐</div>
+        <div class="presta-card-body">
+          <div class="presta-card-cat">Atelier participatif</div>
+          <div class="presta-card-title">Viennoiseries maison</div>
+          <div class="presta-card-artist">Chef Marc Dubois</div>
+          <span class="badge badge-muted">Non programmé</span>
+        </div>
+      </a>
+      <a class="presta-card" href="prestation-detail.html">
+        <div class="presta-card-img">🌾</div>
+        <div class="presta-card-body">
+          <div class="presta-card-cat">Conférence</div>
+          <div class="presta-card-title">Les farines biologiques locales</div>
+          <div class="presta-card-artist">Chef Marc Dubois</div>
+          <span class="badge badge-muted">Non programmé</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div>
+    <div class="footer-logo">Saveurs en Fête</div>
+    <div class="footer-sub">Festival Culinaire · Liège 2026</div>
+  </div>
+  <div class="footer-links">
+    <a href="#">Mentions légales</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="footer-copy">© 2026 Saveurs en Fête</div>
+</footer>
+
+</body>
+</html>

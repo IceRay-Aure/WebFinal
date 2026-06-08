@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saveurs en Fête 2026 – Pain artisanal au levain</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.presta-detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 48px;
+  align-items: start;
+}
+.presta-detail-img {
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, #2a2a27, #1a1a18);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 80px;
+  border: 1px solid var(--c-border);
+  margin-bottom: 32px;
+  position: relative;
+}
+.presta-detail-img::before { content: ''; position: absolute; inset: 8px; border: 1px solid rgba(201,168,76,0.1); }
+.presta-detail-title { font-family: var(--f-display); font-size: 48px; font-weight: 300; color: var(--c-ivory); line-height: 1; margin-bottom: 8px; }
+.presta-detail-cat { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--c-gold); margin-bottom: 20px; }
+.presta-detail-desc { font-size: 13px; font-weight: 300; color: var(--c-muted); line-height: 1.9; }
+.presta-side-card { background: var(--c-charcoal); border: 1px solid var(--c-border); padding: 24px; }
+.presta-side-title { font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--c-gold); margin-bottom: 16px; }
+.presta-side-item { padding: 10px 0; border-bottom: 1px solid rgba(201,168,76,0.1); font-size: 12px; }
+.presta-side-item:last-child { border-bottom: none; }
+.presta-side-key { font-size: 9px; color: var(--c-muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 3px; }
+.presta-side-val { color: var(--c-ivory); }
+.presta-side-val a { color: var(--c-gold); text-decoration: none; }
+.presta-side-val a:hover { color: var(--c-gold-lt); }
+@media (max-width: 900px) {
+  .presta-detail-layout { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-logo" href="index.html">
+    <div class="site-logo-icon">🍴</div>
+    <div class="site-logo-text">
+      <span class="site-logo-name">Saveurs en Fête</span>
+      <span class="site-logo-sub">Festival Culinaire · 2026</span>
+    </div>
+  </a>
+  <nav class="site-nav">
+    <a href="index.html">Accueil</a>
+    <a href="artistes.html">Artistes</a>
+    <a href="prestations.html" class="active">Prestations</a>
+    <a href="contact.html">Contact</a>
+    <a href="connexion.html" class="btn-nav-connect">Se connecter</a>
+  </nav>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="prestations.html">Prestations</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Pain artisanal au levain</span>
+    </div>
+
+    <div class="presta-detail-layout">
+      <div>
+        <div class="presta-detail-img">🥖</div>
+        <div class="presta-detail-cat">Démonstration</div>
+        <h1 class="presta-detail-title">Pain artisanal au levain</h1>
+        <div class="gold-line"></div>
+        <p class="presta-detail-desc">
+          Venez assister à une démonstration complète de la fabrication d'un pain au levain naturel, de la préparation du levain jusqu'à la sortie du four. Chef Marc Dubois vous dévoile ses secrets de boulanger : le choix des farines, l'hydratation de la pâte, le façonnage et les techniques de cuisson au four à sole.<br><br>
+          Cette démonstration s'adresse aussi bien aux amateurs curieux qu'aux passionnés souhaitant approfondir leurs connaissances. Des échantillons seront distribués à la fin de la session.
+        </p>
+      </div>
+
+      <div>
+        <div class="presta-side-card">
+          <div class="presta-side-title">◈ Informations</div>
+          <div class="presta-side-item">
+            <div class="presta-side-key">Catégorie</div>
+            <div class="presta-side-val">Démonstration</div>
+          </div>
+          <div class="presta-side-item">
+            <div class="presta-side-key">Artiste</div>
+            <div class="presta-side-val"><a href="fiche-artiste.html">Chef Marc Dubois</a></div>
+          </div>
+          <div class="presta-side-item">
+            <div class="presta-side-key">Programmation</div>
+            <div class="presta-side-val">
+              <span class="badge badge-gold" style="margin-bottom:4px;display:inline-flex;">✅ Programmé</span><br>
+              🕙 10h00 — Scène Principale
+            </div>
+          </div>
+          <div class="presta-side-item">
+            <div class="presta-side-key">Durée estimée</div>
+            <div class="presta-side-val">1 heure</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div>
+    <div class="footer-logo">Saveurs en Fête</div>
+    <div class="footer-sub">Festival Culinaire · Liège 2026</div>
+  </div>
+  <div class="footer-links">
+    <a href="#">Mentions légales</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="footer-copy">© 2026 Saveurs en Fête</div>
+</footer>
+
+</body>
+</html>

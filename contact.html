@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saveurs en Fête 2026 – Contact</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.contact-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; align-items: start; }
+.contact-info-card { background: var(--c-charcoal); border: 1px solid var(--c-border); padding: 32px; }
+.contact-info-title { font-family: var(--f-display); font-size: 28px; font-weight: 300; margin-bottom: 8px; }
+.contact-info-sub { font-size: 11px; color: var(--c-muted); margin-bottom: 24px; line-height: 1.7; }
+.contact-item { display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-top: 1px solid rgba(201,168,76,0.1); }
+.contact-item-icon { width: 36px; height: 36px; border: 1px solid var(--c-border); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; color: var(--c-gold); }
+.contact-item-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--c-muted); margin-bottom: 3px; }
+.contact-item-text { font-size: 12px; line-height: 1.6; }
+.contact-form-card { background: var(--c-charcoal); border: 1px solid var(--c-border); padding: 36px; }
+@media (max-width: 900px) {
+  .contact-layout { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-logo" href="index.html">
+    <div class="site-logo-icon">🍴</div>
+    <div class="site-logo-text">
+      <span class="site-logo-name">Saveurs en Fête</span>
+      <span class="site-logo-sub">Festival Culinaire · 2026</span>
+    </div>
+  </a>
+  <nav class="site-nav">
+    <a href="index.html">Accueil</a>
+    <a href="artistes.html">Artistes</a>
+    <a href="prestations.html">Prestations</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="connexion.html" class="btn-nav-connect">Se connecter</a>
+  </nav>
+</header>
+
+<section class="section">
+  <div class="container-sm">
+    <div class="section-title-wrap">
+      <span class="section-overline">Nous contacter</span>
+      <h1 class="section-title">Votre <em style="font-style:italic;">Message</em></h1>
+      <div class="section-divider"><span class="section-divider-icon">◆</span></div>
+    </div>
+
+    <!-- Message de confirmation (affiché après envoi réussi) -->
+    <!-- <div class="alert alert-success">✅ Votre message a bien été envoyé. Une copie vous a été adressée.</div> -->
+    <!-- Message d'erreur -->
+    <!-- <div class="alert alert-error">⚠️ Veuillez remplir tous les champs obligatoires.</div> -->
+
+    <div class="contact-layout">
+      <div>
+        <div class="contact-info-card">
+          <div class="contact-info-title">L'équipe organisatrice</div>
+          <div class="contact-info-sub">Une question sur l'événement ? Écrivez-nous, nous vous répondrons rapidement. Une copie de votre message vous sera envoyée automatiquement.</div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div class="contact-item-text">
+              <div class="contact-item-label">Adresse</div>
+              Place du Marché, 4000 Liège, Belgique
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📧</div>
+            <div class="contact-item-text">
+              <div class="contact-item-label">E-mail</div>
+              info@saveurs-en-fete.be
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📅</div>
+            <div class="contact-item-text">
+              <div class="contact-item-label">Événement</div>
+              Samedi 14 juin 2026
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="contact-form-card">
+          <form method="POST" action="contact.php">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="nom">Votre nom <span class="required">*</span></label>
+                <input type="text" id="nom" name="nom" class="form-control" placeholder="Jean Dupont" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Votre e-mail <span class="required">*</span></label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="jean@exemple.be" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="sujet">Sujet <span class="required">*</span></label>
+              <input type="text" id="sujet" name="sujet" class="form-control" placeholder="Objet de votre message..." required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Message <span class="required">*</span></label>
+              <textarea id="message" name="message" class="form-control" placeholder="Bonjour, je souhaite vous contacter au sujet de..." required></textarea>
+            </div>
+            <div style="display:flex; justify-content:flex-end;">
+              <button type="submit" class="btn btn-primary">✉️ Envoyer le message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div>
+    <div class="footer-logo">Saveurs en Fête</div>
+    <div class="footer-sub">Festival Culinaire · Liège 2026</div>
+  </div>
+  <div class="footer-links">
+    <a href="#">Mentions légales</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="footer-copy">© 2026 Saveurs en Fête</div>
+</footer>
+
+</body>
+</html>

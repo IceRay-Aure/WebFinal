@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saveurs en Fête – Planifier une prestation</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-logo" href="#">
+    <div class="site-logo-icon">⚙️</div>
+    <div class="site-logo-text">
+      <span class="site-logo-name">Administration</span>
+      <span class="site-logo-sub">Saveurs en Fête · Organisateur</span>
+    </div>
+  </a>
+  <nav class="site-nav-private">
+    <a href="dashboard-organisateur.html">← Programme</a>
+    <a href="connexion.html" class="btn-logout">Déconnexion</a>
+  </nav>
+</header>
+
+<section class="section">
+  <div class="container-sm">
+    <div class="breadcrumb">
+      <a href="dashboard-organisateur.html">Gestion du Programme</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Planifier une prestation</span>
+    </div>
+    <div class="section-title-wrap">
+      <span class="section-overline">Assistant de planification</span>
+      <h1 class="section-title">Nouvelle <em style="font-style:italic;">Entrée</em></h1>
+      <div class="section-divider"><span class="section-divider-icon">◆</span></div>
+    </div>
+
+    <!--
+    =====================================================
+    ÉTAPE 1 — Choix du créneau horaire
+    Afficher quand : $_POST['step'] est vide ou = '1'
+    =====================================================
+    -->
+    <div class="stepper">
+      <div class="step active">
+        <div class="step-circle">1</div>
+        <div class="step-label">Créneau</div>
+      </div>
+      <div class="step">
+        <div class="step-circle">2</div>
+        <div class="step-label">Artiste & Scène</div>
+      </div>
+      <div class="step">
+        <div class="step-circle">3</div>
+        <div class="step-label">Prestation</div>
+      </div>
+    </div>
+
+    <div class="planning-form-card">
+      <div class="planning-form-title">Étape 1 / 3</div>
+      <div class="planning-form-sub">Choisissez un créneau horaire disponible.</div>
+      <form method="POST" action="planifier.php">
+        <input type="hidden" name="step" value="1">
+        <div class="form-group">
+          <label class="form-label" for="heure">Heure de début <span class="required">*</span></label>
+          <select id="heure" name="heure" class="form-control" required>
+            <option value="">— Sélectionnez un créneau —</option>
+            <option value="10:00">10h00</option>
+            <option value="11:00">11h00</option>
+            <option value="12:00">12h00</option>
+            <option value="13:00">13h00</option>
+            <option value="14:00">14h00</option>
+            <option value="15:00">15h00</option>
+            <option value="16:00">16h00</option>
+            <option value="17:00">17h00</option>
+          </select>
+          <div class="form-hint">Seuls les créneaux avec au moins une scène disponible sont affichés.</div>
+        </div>
+        <div class="planning-actions">
+          <a href="dashboard-organisateur.html" class="btn btn-outline btn-sm">✕ Annuler</a>
+          <button type="submit" class="btn btn-primary">Étape suivante →</button>
+        </div>
+      </form>
+    </div>
+
+    <!--
+    =====================================================
+    ÉTAPE 2 — Choix de l'artiste et de la scène
+    Afficher quand : $_POST['step'] = '2'
+    (décommenter et remplir dynamiquement en PHP)
+    =====================================================
+    -->
+    <!--
+    <div class="stepper">
+      <div class="step done">
+        <div class="step-circle">✓</div>
+        <div class="step-label">Créneau</div>
+      </div>
+      <div class="step active">
+        <div class="step-circle">2</div>
+        <div class="step-label">Artiste & Scène</div>
+      </div>
+      <div class="step">
+        <div class="step-circle">3</div>
+        <div class="step-label">Prestation</div>
+      </div>
+    </div>
+
+    <div class="planning-form-card">
+      <div class="planning-form-title">Étape 2 / 3</div>
+      <div class="planning-form-sub">Choisissez l'artiste et la scène disponibles à ce créneau.</div>
+      <form method="POST" action="planifier.php">
+        <input type="hidden" name="step" value="2">
+        <input type="hidden" name="heure" value="14:00">
+
+        <div class="planning-recap">
+          <div class="planning-recap-title">◈ Rappel</div>
+          <div class="planning-recap-item">
+            <span class="planning-recap-key">Heure :</span>
+            <span class="planning-recap-val">14h00</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="artiste">Artiste <span class="required">*</span></label>
+          <select id="artiste" name="artiste_id" class="form-control" required>
+            <option value="">— Artistes disponibles à 14h —</option>
+            <option value="2">Chef Yuki Tanaka</option>
+            <option value="3">Sophie Marchetti</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="scene">Scène <span class="required">*</span></label>
+          <select id="scene" name="scene_id" class="form-control" required>
+            <option value="">— Scènes libres à 14h —</option>
+            <option value="1">🔥 Scène Principale</option>
+            <option value="2">🌿 Atelier Découverte</option>
+          </select>
+        </div>
+        <div class="planning-actions">
+          <div class="planning-actions-left">
+            <button type="submit" name="retour" value="1" class="btn btn-outline btn-sm">← Retour</button>
+            <a href="dashboard-organisateur.html" class="btn btn-outline btn-sm">✕ Annuler</a>
+          </div>
+          <button type="submit" class="btn btn-primary">Étape suivante →</button>
+        </div>
+      </form>
+    </div>
+    -->
+
+    <!--
+    =====================================================
+    ÉTAPE 3 — Choix de la prestation + confirmation
+    Afficher quand : $_POST['step'] = '3'
+    (décommenter et remplir dynamiquement en PHP)
+    =====================================================
+    -->
+    <!--
+    <div class="stepper">
+      <div class="step done">
+        <div class="step-circle">✓</div>
+        <div class="step-label">Créneau</div>
+      </div>
+      <div class="step done">
+        <div class="step-circle">✓</div>
+        <div class="step-label">Artiste & Scène</div>
+      </div>
+      <div class="step active">
+        <div class="step-circle">3</div>
+        <div class="step-label">Prestation</div>
+      </div>
+    </div>
+
+    <div class="planning-form-card">
+      <div class="planning-form-title">Étape 3 / 3</div>
+      <div class="planning-form-sub">Choisissez la prestation et confirmez l'ajout au programme.</div>
+      <form method="POST" action="planifier.php">
+        <input type="hidden" name="step" value="3">
+        <input type="hidden" name="heure" value="14:00">
+        <input type="hidden" name="artiste_id" value="2">
+        <input type="hidden" name="scene_id" value="2">
+
+        <div class="planning-recap">
+          <div class="planning-recap-title">◈ Récapitulatif</div>
+          <div class="planning-recap-item">
+            <span class="planning-recap-key">Heure :</span>
+            <span class="planning-recap-val">14h00</span>
+          </div>
+          <div class="planning-recap-item">
+            <span class="planning-recap-key">Artiste :</span>
+            <span class="planning-recap-val">Chef Yuki Tanaka</span>
+          </div>
+          <div class="planning-recap-item">
+            <span class="planning-recap-key">Scène :</span>
+            <span class="planning-recap-val">🌿 Atelier Découverte</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="prestation">Prestation <span class="required">*</span></label>
+          <select id="prestation" name="prestation_id" class="form-control" required>
+            <option value="">— Catalogue de Chef Yuki Tanaka —</option>
+            <option value="5">Atelier sushis végétariens</option>
+            <option value="6">Initiation couteaux japonais</option>
+          </select>
+        </div>
+        <div class="planning-actions">
+          <div class="planning-actions-left">
+            <button type="submit" name="retour" value="2" class="btn btn-outline btn-sm">← Retour</button>
+            <a href="dashboard-organisateur.html" class="btn btn-outline btn-sm">✕ Annuler</a>
+          </div>
+          <button type="submit" class="btn btn-success">✅ Confirmer et ajouter</button>
+        </div>
+      </form>
+    </div>
+    -->
+
+  </div>
+</section>
+
+</body>
+</html>

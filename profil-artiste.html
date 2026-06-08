@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saveurs en Fête 2026 – Chef Marc Dubois</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.artist-profile-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.artist-profile-photo {
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(145deg, #2a2a27, #1a1a18);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 100px;
+  border: 1px solid var(--c-border);
+  position: relative;
+}
+.artist-profile-photo::before {
+  content: '';
+  position: absolute; inset: 8px;
+  border: 1px solid rgba(201,168,76,0.1);
+}
+.artist-profile-meta {
+  margin-top: 16px;
+  background: var(--c-charcoal);
+  border: 1px solid var(--c-border);
+  padding: 16px;
+}
+.artist-profile-meta-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 11px;
+}
+.artist-profile-meta-item:last-child { border-bottom: none; }
+.meta-key { color: var(--c-muted); letter-spacing: 1px; }
+.meta-val { color: var(--c-ivory); }
+.artist-profile-name { font-family: var(--f-display); font-size: 52px; font-weight: 300; color: var(--c-ivory); line-height: 1; margin-bottom: 8px; }
+.artist-profile-specialty { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--c-gold); margin-bottom: 20px; }
+.artist-profile-bio { font-size: 13px; font-weight: 300; color: var(--c-muted); line-height: 1.9; margin-bottom: 32px; }
+@media (max-width: 900px) {
+  .artist-profile-layout { grid-template-columns: 1fr; }
+  .artist-profile-photo { max-width: 280px; margin: 0 auto; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-logo" href="index.html">
+    <div class="site-logo-icon">🍴</div>
+    <div class="site-logo-text">
+      <span class="site-logo-name">Saveurs en Fête</span>
+      <span class="site-logo-sub">Festival Culinaire · 2026</span>
+    </div>
+  </a>
+  <nav class="site-nav">
+    <a href="index.html">Accueil</a>
+    <a href="artistes.html" class="active">Artistes</a>
+    <a href="prestations.html">Prestations</a>
+    <a href="contact.html">Contact</a>
+    <a href="connexion.html" class="btn-nav-connect">Se connecter</a>
+  </nav>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="artistes.html">Artistes</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Chef Marc Dubois</span>
+    </div>
+
+    <div class="artist-profile-layout">
+      <!-- COLONNE GAUCHE -->
+      <div>
+        <div class="artist-profile-photo">👨‍🍳</div>
+        <div class="artist-profile-meta">
+          <div class="artist-profile-meta-item">
+            <span class="meta-key">Nom</span>
+            <span class="meta-val">Dubois</span>
+          </div>
+          <div class="artist-profile-meta-item">
+            <span class="meta-key">Prénom</span>
+            <span class="meta-val">Marc</span>
+          </div>
+          <div class="artist-profile-meta-item">
+            <span class="meta-key">Spécialité</span>
+            <span class="meta-val">Boulangerie artisanale</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLONNE DROITE -->
+      <div>
+        <span class="section-overline">Chef & Artisan boulanger</span>
+        <h1 class="artist-profile-name">Marc Dubois</h1>
+        <div class="artist-profile-specialty">Boulangerie & Viennoiserie Artisanale</div>
+        <div class="gold-line"></div>
+        <p class="artist-profile-bio">
+          Chef spécialisé dans les pains de tradition française, Marc Dubois revient aux techniques ancestrales pour créer des pains au levain naturel d'une qualité exceptionnelle. Formé à l'École Lenôtre de Paris, il a ouvert sa boulangerie artisanale "Au Pain de Marc" à Liège en 2015, devenue une référence incontournable dans la région.<br><br>
+          Passionné par la transmission, Marc organise régulièrement des ateliers pour partager son amour du pain authentique, de la sélection des farines biologiques locales à la maîtrise du four à bois.
+        </p>
+
+        <div style="margin-bottom:20px;">
+          <span class="section-overline">Ses prestations</span>
+        </div>
+        <div class="grid-3">
+          <a class="presta-card" href="fiche-prestation.html">
+            <div class="presta-card-img">🥖</div>
+            <div class="presta-card-body">
+              <div class="presta-card-cat">Démonstration</div>
+              <div class="presta-card-title">Pain artisanal au levain</div>
+              <div class="presta-card-artist">Chef Marc Dubois</div>
+              <span class="badge badge-gold">🕙 10h · Scène Principale</span>
+            </div>
+          </a>
+          <a class="presta-card" href="fiche-prestation.html">
+            <div class="presta-card-img">🥐</div>
+            <div class="presta-card-body">
+              <div class="presta-card-cat">Atelier participatif</div>
+              <div class="presta-card-title">Viennoiseries maison</div>
+              <div class="presta-card-artist">Chef Marc Dubois</div>
+              <span class="badge badge-muted">Non programmé</span>
+            </div>
+          </a>
+          <a class="presta-card" href="fiche-prestation.html">
+            <div class="presta-card-img">🌾</div>
+            <div class="presta-card-body">
+              <div class="presta-card-cat">Conférence</div>
+              <div class="presta-card-title">Les farines biologiques locales</div>
+              <div class="presta-card-artist">Chef Marc Dubois</div>
+              <span class="badge badge-muted">Non programmé</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div>
+    <div class="footer-logo">Saveurs en Fête</div>
+    <div class="footer-sub">Festival Culinaire · Liège 2026</div>
+  </div>
+  <div class="footer-links">
+    <a href="#">Mentions légales</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="footer-copy">© 2026 Saveurs en Fête</div>
+</footer>
+
+</body>
+</html>
