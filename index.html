@@ -1,44 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/styles.css">
+    <title>Saveurs en Fête 2026 – Accueil</title>
+    <link rel="stylesheet" href="assets/styles.css"> 
 </head>
-
 <body>
-    <header>
-        <div class="header_logo">
+
+    <header class="site-header">
+        <a class="site-logo" href="index.html">
+             <div class="header_logo">
             <img src="./assets/uploads/logo2.jpg" alt="Logo">
         </div>
-        <nav >
-            <ul class="navPart1">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#artistes">Artistes</a></li>
-                <li><a href="#prestations">Prestations</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-
-            <ul class="navPart2">
-                <li><a href="#login">Login</a> /</li>
-
-                <li><a href="#signup">Sign Up</a></li>
-            </ul>
+        </a>
+        <nav class="site-nav">
+            <a href="index.html" class="active">Accueil</a>
+            <a href="artistes.html">Artistes</a>
+            <a href="prestations.html">Prestations</a>
+            <a href="contact.html">Contact</a>
+            <a href="connexion.html" class="btn-nav-connect">Se connecter</a>
         </nav>
     </header>
+
     <main>
-        <section class="hero1Index">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur harum perspiciatis magnam minima voluptatibus illo saepe non architecto ducimus iste porro voluptatum itaque iure ea, dolor unde nam adipisci ratione.</p>
-
+        <section class="section hero-section">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <span class="section-overline">Bienvenue</span>
+                    <h1 class="section-title">Le Festival des <em style="font-style:italic;">Talents Locaux</em></h1>
+                    <div class="section-divider"><span class="section-divider-icon">◆</span></div>
+                </div>
+                <p class="hero-description">
+                    Découvrez l'excellence culinaire de notre région. "Saveurs en Fête" rassemble les meilleurs chefs, artisans et passionnés pour une journée unique de démonstrations, d'ateliers et de dégustations inoubliables.
+                </p>
+            </div>
         </section>
-        <section class="planning">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, ipsum omnis totam eum, libero earum iure sequi dolorem qui sapiente error. Earum odit deserunt est soluta expedita corporis quae tempore.</p>
 
+        <section class="section planning-section">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <span class="section-overline">Programme Officiel</span>
+                    <h2 class="section-title">Déroulement de la <em style="font-style:italic;">Journée</em></h2>
+                </div>
+
+                <table class="schedule-table">
+                    <caption class="sr-only">Grille horaire des prestations du festival Saveurs en Fête</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="time-col">Heure</th>
+                            <th scope="col">🔥 Scène Principale</th>
+                            <th scope="col">🌿 Atelier Découverte</th>
+                            <th scope="col">🍷 Espace Dégustation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="time-cell">
+                                <span class="time-hour">10</span><span class="time-min">h00</span>
+                            </th>
+                            <td class="cell-filled">
+                                <a href="prestation-detail.html" class="schedule-card">
+                                    <div class="schedule-title">Pain artisanal au levain</div>
+                                    <div class="schedule-artist">Chef Marc Dubois</div>
+                                </a>
+                            </td>
+                            <td class="cell-empty"></td>
+                            <td class="cell-filled">
+                                <a href="prestation-detail.html" class="schedule-card">
+                                    <div class="schedule-title">Accord mets & vins</div>
+                                    <div class="schedule-artist">Claire Vandenberg</div>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="time-cell">
+                                <span class="time-hour">14</span><span class="time-min">h00</span>
+                            </th>
+                            <td class="cell-empty"></td>
+                            <td class="cell-filled">
+                                <a href="prestation-detail.html" class="schedule-card">
+                                    <div class="schedule-title">Sushis végétariens</div>
+                                    <div class="schedule-artist">Chef Yuki Tanaka</div>
+                                </a>
+                            </td>
+                            <td class="cell-empty"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="time-cell">
+                                <span class="time-hour">16</span><span class="time-min">h00</span>
+                            </th>
+                            <td class="cell-filled">
+                                <a href="prestation-detail.html" class="schedule-card">
+                                    <div class="schedule-title">Grand show pâtisserie</div>
+                                    <div class="schedule-artist">Sophie Marchetti</div>
+                                </a>
+                            </td>
+                            <td class="cell-filled">
+                                <a href="prestation-detail.html" class="schedule-card">
+                                    <div class="schedule-title">Cuisine marocaine</div>
+                                    <div class="schedule-artist">Chef Amina Khoury</div>
+                                </a>
+                            </td>
+                            <td class="cell-empty"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 
-</body>
+    <footer class="site-footer">
+        <div>
+            <div class="footer-logo">Saveurs en Fête</div>
+            <div class="footer-sub">Festival Culinaire · Liège 2026</div>
+        </div>
+        <div class="footer-links">
+            <a href="#">Mentions légales</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-copy">© 2026 Saveurs en Fête</div>
+    </footer>
 
+</body>
 </html>

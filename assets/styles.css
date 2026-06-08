@@ -69,23 +69,251 @@ nav a {
 /*============================================================================================
                                             Page Index
 ==============================================================================================*/
-main{
 
+
+/* ==========================================================================
+   Tableau du Programme (Grille Horaire)
+   ========================================================================== */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background-color: var(--c-charcoal);
+    border: 1px solid var(--c-border);
+}
+
+.schedule-table caption.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.schedule-table th {
+    background-color: var(--c-dark);
+    color: var(--c-gold);
+    padding: 1.5rem 1rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid var(--c-border);
+    text-align: left;
+}
+
+.schedule-table th.time-col {
+    width: 100px;
+    text-align: center;
+}
+
+.schedule-table td, .schedule-table th[scope="row"] {
+    border: 1px solid rgba(201, 168, 76, 0.1);
+    vertical-align: top;
+    height: 120px;
+    padding: 0;
+}
+
+.time-cell {
+    background-color: rgba(201, 168, 76, 0.03);
+    vertical-align: middle !important;
+    text-align: center;
+    color: var(--c-ivory);
+}
+
+.time-hour {
+    font-size: 1.5rem;
+    font-family: var(--f-display, sans-serif);
+}
+
+.time-min {
+    font-size: 0.8rem;
+    color: var(--c-muted);
+}
+
+.cell-empty {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Style des cartes de prestations dans le tableau */
+.schedule-card {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 1rem;
+    background-color: rgba(201, 168, 76, 0.05);
+    border-left: 3px solid var(--c-gold);
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+}
+
+.schedule-card:hover {
+    background-color: rgba(201, 168, 76, 0.15);
+}
+
+.schedule-title {
+    color: var(--c-ivory);
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.schedule-artist {
+    color: var(--c-muted);
+    font-size: 0.85rem;
+}
+
+/* Rendre le tableau exploitable sur mobile */
+@media (max-width: 900px) {
+    .schedule-table, .schedule-table tbody, .schedule-table tr, .schedule-table td, .schedule-table th {
+        display: block;
+        width: 100%;
+    }
     
+    .schedule-table thead {
+        display: none; /* Masque l'en-tête sur mobile pour empiler les éléments */
+    }
     
+    .schedule-table td {
+        height: auto;
+        min-height: 80px;
+    }
+    
+    .cell-empty {
+        display: none; /* Ne pas afficher les cases vides sur mobile pour gagner de la place */
+    }
+}
+/* ==========================================================================
+   Mise en page globale (Container)
+   ========================================================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-.hero1Index {
-    width: 100%;
-    height: 100vh;
-    background-color: #2e6b4f;
+.section {
+    padding: 6rem 0;
 }
 
-.planning{
-    width: 100%;
-    height: 100vh;
-    background-color: #8b2020;
+/* ==========================================================================
+   Section Hero (Présentation de l'événement)
+   ========================================================================== */
+.hero-section {
+    background: linear-gradient(145deg, var(--c-dark), var(--c-black));
+    text-align: center;
+    border-bottom: 1px solid var(--c-border);
+    padding: 8rem 0 6rem 0;
 }
 
+.section-title-wrap {
+    margin-bottom: 2rem;
+}
+
+.section-overline {
+    display: block;
+    color: var(--c-gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    color: var(--c-ivory);
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.section-divider {
+    color: var(--c-gold);
+    font-size: 1.5rem;
+    opacity: 0.6;
+}
+
+.hero-description {
+    color: var(--c-muted);
+    font-size: 1.25rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   Pied de page (Footer)
+   ========================================================================== */
+.site-footer {
+    background-color: var(--c-black);
+    border-top: 1px solid var(--c-border);
+    padding: 4rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-logo {
+    color: var(--c-ivory);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.footer-sub {
+    color: var(--c-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: var(--c-muted);
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--c-gold);
+}
+
+.footer-copy {
+    color: var(--c-muted);
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   Responsive Design (Mobiles et Tablettes)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 2rem;
+    }
+
+    .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
